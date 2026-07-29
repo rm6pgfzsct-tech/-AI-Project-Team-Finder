@@ -5,96 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Project Team Finder</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial,sans-serif;
-        }
-
-        body{
-            background:#f4f7fc;
-        }
-
-        header{
-            background:#0066ff;
-            color:white;
-            padding:20px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
-
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin-left:20px;
-            font-weight:bold;
-        }
-
-        .hero{
-            text-align:center;
-            padding:100px 20px;
-        }
-
-        .hero h1{
-            font-size:45px;
-            color:#0066ff;
-        }
-
-        .hero p{
-            font-size:20px;
-            margin:20px 0;
-        }
-
-        .btn{
-            display:inline-block;
-            padding:15px 30px;
-            background:#0066ff;
-            color:white;
-            text-decoration:none;
-            border-radius:8px;
-            font-size:18px;
-        }
-
-        footer{
-            margin-top:80px;
-            background:#222;
-            color:white;
-            text-align:center;
-            padding:20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <h2>AI Project Team Finder</h2>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Students</a>
-        <a href="#">Teachers</a>
-        <a href="#">Login</a>
-    </nav>
+    <h1>AI Project Team Finder</h1>
 </header>
 
 <section class="hero">
-    <h1>Welcome to AI Project Team Finder</h1>
+    <h2>Welcome</h2>
+    <p>Build teams with AI, join projects, and improve your skills.</p>
 
-    <p>
-        Find teammates, build projects, improve your skills,
-        and connect with teachers using AI.
-    </p>
-
-    <a href="#" class="btn">Get Started</a>
+    <button onclick="welcome()">
+        Get Started
+    </button>
 </section>
 
-<footer>
-    © 2026 AI Project Team Finder | All Rights Reserved
-</footer>
+<script src="script.js"></script>
 
 </body>
 </html>
