@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Student Registration - AI Project Team Finder</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration - AI Project Team Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-<h1>Student Registration</h1>
+  <h1>Student Registration</h1>
 
-<input id="name" placeholder="Full Name">
-<br><br>
+  <input id="name" type="text" placeholder="Full Name">
+  <br><br>
 
-<input id="email" placeholder="Email">
-<br><br>
+  <input id="email" type="email" placeholder="Email">
+  <br><br>
 
-<input id="skill" placeholder="Your Skills">
-<br><br>
+  <input id="skill" type="text" placeholder="Your Skills">
+  <br><br>
 
-<input id="password" placeholder="Create Password" type="password">
-<br><br>
+  <input id="password" type="password" placeholder="Create Password">
+  <br><br>
 
-<button onclick="register()">Create Account</button>
+  <button onclick="register()">Create Account</button>
 
-<p id="message"></p>
+  <p id="message"></p>
 
-<script>
-<script>
+  <script>
+    function register() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let skill = document.getElementById("skill").value;
+      let password = document.getElementById("password").value;
 
-const firebaseConfig = {
-  apiKey: "YOUR KEY",
-  authDomain: "YOUR DOMAIN",
-  projectId: "YOUR ID"
-};
-
-// Firebase setup here
-
-function register(){
-
-}
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-</script>
-
+      if (name === "" || email === "" || skill === "" || password === "") {
+        document.getElementById("message").innerHTML = "Please fill in all fields.";
+      } else {
+        document.getElementById("message").innerHTML =
+          "Registration successful! Welcome, " + name + ".";
+      }
+    }
+  </script>
 
 </body>
 </html>
