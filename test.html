@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Skill Test - AI Project Team Finder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<h1>AI Skill Test</h1>
+
+<p id="question">Question 1: What is Artificial Intelligence?</p>
+
+<input id="answer" placeholder="Type your answer">
+
+<br><br>
+
+<button onclick="submitAnswer()">Submit</button>
+
+<h2 id="result"></h2>
+
+<script>
+
+function submitAnswer(){
+
+let answer = document.getElementById("answer").value;
+
+if(answer.length > 10){
+ document.getElementById("result").innerHTML =
+ "Good answer! Score: 10/10";
+}
+else{
+ document.getElementById("result").innerHTML =
+ "Try again. Score: 5/10";
+}
+
+}
+
+</script>
+
+</body>
+</html>
