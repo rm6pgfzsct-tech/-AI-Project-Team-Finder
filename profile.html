@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Profile - AI Project Team Finder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<h1>Student Profile</h1>
+
+<h3>Upload Profile Photo</h3>
+
+<input type="file" id="photo" accept="image/*">
+
+<br><br>
+
+<img id="preview" width="150">
+
+<h3>Student Details</h3>
+
+<input placeholder="Name" id="name">
+<br><br>
+
+<input placeholder="Student ID" id="id">
+<br><br>
+
+<input placeholder="Skills" id="skills">
+<br><br>
+
+<button onclick="saveProfile()">Save Profile</button>
+
+<p id="result"></p>
+
+
+<script>
+
+document.getElementById("photo").onchange = function(event){
+
+let image = document.getElementById("preview");
+image.src = URL.createObjectURL(event.target.files[0]);
+
+}
+
+
+function saveProfile(){
+
+let name = document.getElementById("name").value;
+let id = document.getElementById("id").value;
+
+document.getElementById("result").innerHTML =
+"Profile saved: " + name + " | ID: " + id;
+
+}
+
+</script>
+
+</body>
+</html>
