@@ -1,19 +1,6 @@
 import { auth, db } from "./firebase.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
-import { auth, db } from "./firebase.js";
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
-
-// 👇 Paste the new code here
-window.register = async function () {
-
-  // Registration code here
-
-};
-import { auth, db } from "./firebase.js";
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 window.register = async function () {
 
@@ -32,10 +19,10 @@ window.register = async function () {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
         await setDoc(doc(db, "students", userCredential.user.uid), {
-            name: name,
-            email: email,
-            college: college,
-            skills: skills,
+            name,
+            email,
+            college,
+            skills,
             rank: "Beginner",
             score: 0
         });
