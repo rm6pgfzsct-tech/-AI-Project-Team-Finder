@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Teacher Dashboard - AI Project Team Finder</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - AI Project Team Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+<div class="container">
 
 <h1>Teacher Dashboard</h1>
 
-<h2>Student Management</h2>
+<h2>Students</h2>
 
-<table border="1">
+<table border="1" width="100%">
 <tr>
-<th>Student Name</th>
+<th>Name</th>
 <th>Score</th>
 <th>Rank</th>
 </tr>
@@ -21,27 +23,36 @@
 <tr>
 <td>Student 1</td>
 <td>85</td>
-<td>A+</td>
+<td>A</td>
 </tr>
 
 <tr>
 <td>Student 2</td>
-<td>75</td>
-<td>A</td>
+<td>92</td>
+<td>A+</td>
 </tr>
 
 </table>
 
-<h2>Create Test</h2>
+<br>
 
-<input placeholder="Question">
-<input placeholder="Answer">
+<button>Create AI Test</button>
 
-<button>Add Question</button>
+<br><br>
 
-<h2>AI Analysis</h2>
+<button>View Rankings</button>
 
-<p>AI will analyse student skills and generate rankings.</p>
+<br><br>
+
+<button>Manage Teams</button>
+
+<br><br>
+
+<a href="index.html">
+<button>Logout</button>
+</a>
+
+</div>
 
 </body>
 </html>
