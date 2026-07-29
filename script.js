@@ -1,37 +1,36 @@
-function register() {
+import { auth, db } from "./firebase.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let college = document.getElementById("college").value;
-    let skills = document.getElementById("skills").value;
-    let password = document.getElementById("password").value;
+window.register = async function () {
 
-    if (name === "" || email === "" || college === "" || skills === "" || password === "") {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const college = document.getElementById("college").value;
+    const skills = document.getElementById("skills").value;
+    const password = document.getElementById("password").value;
 
-        document.getElementById("message").innerHTML =
-        "Please fill all the fields.";
-
+    if (!name || !email || !college || !skills || !password) {
+        document.getElementById("message").innerHTML = "Please fill all fields.";
         return;
     }
 
-    document.getElementById("message").innerHTML =
-    "Registration Successful!";
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-}
+        await setDoc(doc(db, "students", userCredential.user.uid), {
+            name: name,
+            email: email,
+            college: college,
+            skills: skills,
+            rank: "Beginner",
+            score: 0
+        });
 
-function login() {
+        document.getElementById("message").innerHTML = "Account created successfully!";
 
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-
-    if (email === "" || password === "") {
-
-        document.getElementById("message").innerHTML =
-        "Please enter email and password.";
-
-        return;
+    } catch (error) {
+        document.getElementById("message").innerHTML = error.message;
     }
 
-    window.location.href = "dashboard.html";
-
-}
+};
